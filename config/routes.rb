@@ -4,13 +4,13 @@ Rails.application.routes.draw do
 
   get "/profile", to: "users#show", as: :user
 
-  get "/auth/google", as: :google_login
+  get "/auth/google_oauth2", as: :google_login
   get "/auth/google/callback", to: "sessions#create"
 
 
   get "/signup", to: "users#new"
-  get "/login", to: "sessions#new"
-  post "/login", to: "sessions#create"
+  # get "/login", to: "sessions#new"
+  # post "/login", to: "sessions#create"
   get "/logout", to: "sessions#destroy", as: :logout
 
 
