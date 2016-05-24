@@ -11,15 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160524012606) do
+ActiveRecord::Schema.define(version: 20160524043407) do
+
+  create_table "providers", force: :cascade do |t|
+  end
 
   create_table "users", force: :cascade do |t|
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "screen_name"
-    t.string   "uid"
-    t.string   "oauth_token"
-    t.string   "oauth_token_secret"
+    t.string   "provider",   null: false
+    t.string   "uid",        null: false
+    t.string   "name"
+    t.string   "location"
+    t.string   "image_url"
+    t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
+
+  add_index "users", ["provider", "uid"], name: "index_users_on_provider_and_uid", unique: true
+  add_index "users", ["provider"], name: "index_users_on_provider"
+  add_index "users", ["uid"], name: "index_users_on_uid"
 
 end

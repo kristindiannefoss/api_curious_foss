@@ -1,12 +1,12 @@
 class User < ActiveRecord::Base
 
-  def self.from_omniauth(auth_info)
-    where(uid: auth_info[:uid]).first_or_create do |new_user|
-      new_user.uid                = auth_info.uid
-      new_user.name               = auth_info.extra.raw_info.name
-      new_user.screen_name        = auth_info.extra.raw_info.screen_name
-      new_user.oauth_token        = auth_info.credentials.token
-      new_user.oauth_token_secret = auth_info.credentials.secret
-    end
+  def from_omniauth(auth_hash)
+    user = find_or_create_by(uid: auth_hash['uid'], provider: auth_hash['provider'])
+    user.name = auth_hash['info']['name']
+    user.location = auth_hash['info']['location']
+    user.image_url = auth_hash['info']['image']
+    user.url = auth_hash['info']['urls'][user.provider.capitalize]
+    user.save!
+    user
   end
 end
