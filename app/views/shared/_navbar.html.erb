@@ -19,14 +19,18 @@
         <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
         <li class="hidden">
           <a href="#page-top"></a>
-        </li>
         <% if current_user %>
-          Hello, <%= current_user.name %>
+          <!-- Hi, <%#= current_user.name %> -->
+
+        <li>
+          <%= link_to "My Dashboard", dashboard_path %>
+        </li>
+        <li>
+          <%= link_to "Logout", logout_path, method: :delete %>
+        </li>
         <% else %>
         <li>
-          <%#= link_to "Login with Google+", google_login_path %>
-          <%#= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>
-          <li><%= link_to 'Google+', google_login_path %></li>
+          <li><%= link_to 'Login with Google+', google_login_path %></li>
         </li>
         <% end %>
       </ul>

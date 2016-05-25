@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5.1'
+gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -32,6 +32,8 @@ gem 'figaro'
 gem "omniauth-google-oauth2"
 
 gem 'omniauth', :github => 'intridea/omniauth'
+
+gem 'faraday'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -47,6 +49,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'awesome_print'
   gem 'binding_of_caller'
+  gem 'capybara'
 end
 
 group :development do

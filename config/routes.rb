@@ -1,15 +1,11 @@
 Rails.application.routes.draw do
 
   root to: "pages#home"
-
-  get "/profile", to: "users#show", as: :user
-
+  get "/dashboard", to: "users#show", as: :dashboard
   get "/auth/google_oauth2", as: :google_login
   get "/auth/google_oauth2/callback", to: "sessions#create"
 
-
-  get "/signup", to: "users#new"
-  get "/logout", to: "sessions#destroy", as: :logout
+  delete "/logout", to: "sessions#destroy", as: :logout
 
 
   # The priority is based upon order of creation: first created -> highest priority.
