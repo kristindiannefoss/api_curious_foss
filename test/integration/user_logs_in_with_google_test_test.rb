@@ -23,7 +23,7 @@ class UserLogsInWithGoogleTestTest < ActionDispatch::IntegrationTest
     assert_equal 200, page.status_code
     click_link "Login with Google+"
     assert_equal "/auth/google_oauth2/callback", current_path
-    assert page.has_content?("")
+    assert page.has_content?("Horace")
     assert page.has_link?("Logout")
   end
 end
