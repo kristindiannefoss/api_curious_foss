@@ -50,6 +50,7 @@ group :development, :test do
   gem 'awesome_print'
   gem 'binding_of_caller'
   gem 'capybara'
+  gem 'launchy'
 end
 
 group :development do

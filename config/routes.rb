@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root to: "pages#home"
+  resources :messages, only: [:index, :show]
   get "/dashboard", to: "users#show", as: :dashboard
   get "/auth/google_oauth2", as: :google_login
   get "/auth/google_oauth2/callback", to: "sessions#create"
