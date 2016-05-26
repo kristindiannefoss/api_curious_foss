@@ -6,7 +6,7 @@ class GoogleService
 
   def initialize
     @connection = Faraday.new(url: "https://www.googleapis.com")
-    @connection.headers["Authorization"] = "Bearer ya29.CjHuAjmRqEQpxCoPHmyJU29ErLURvD7XP0vZsMskDuh4N6DFZAfXWHi5G0gT6GhWP_4D"
+    @connection.headers["Authorization"] = "Bearer ya29.CjHuAgrCMm1Cvo2hcCJv69JjcC4-cJl5n4gZ5pTa2geKgoV5EuguEAQ3L3YWf0tyHoZT"
   end
 
 
@@ -27,7 +27,7 @@ class GoogleService
   end
 
   def message(id)
-    parse(google.connection.get("/gmail/v1/users/kris.foss@gmail.com/messages/#{id}").body)
+    JSON.parse(google.connection.get("/gmail/v1/users/kris.foss@gmail.com/messages/#{id}").body)
   end
 
   # 154eaacf3d7b6dc4

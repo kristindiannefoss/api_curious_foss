@@ -33,6 +33,7 @@ gem "omniauth-google-oauth2"
 
 gem 'omniauth', :github => 'intridea/omniauth'
 
+gem 'pry'
 gem 'faraday'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -51,6 +52,7 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'capybara'
   gem 'launchy'
+  gem 'pry'
 end
 
 group :development do

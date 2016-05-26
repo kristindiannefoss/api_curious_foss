@@ -1,3 +1,28 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+
 <h1>Specific Message</h1>
 
-<% @message %>
+<p>An email you have from: 
+  <%= @message.senders_email %>
+</p>
+
+<p>Sent it was at:
+  <%= @message.time_recieved %>
+</p>
+
+<p>About it is:
+  <%= @message.subject %>
+</p>
+
+<!-- <p>
+  <ol>
+  <%# @message.list.each do |header| %>
+
+      <li><%#= header %></li>
+      <%# end %>
+    </ol>
+</p> -->

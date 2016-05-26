@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-Horace
+
                         <% flash.each do |type, message| %>
                           <%= content_tag :div, message.html_safe, class: "#{type} flashy", id: "flash_notice" %>
                         <% end %>
