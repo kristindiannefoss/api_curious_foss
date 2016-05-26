@@ -6,9 +6,8 @@ class GoogleService
 
   def initialize
     @connection = Faraday.new(url: "https://www.googleapis.com")
-    @connection.headers["Authorization"] = "Bearer ya29.CjHuAgrCMm1Cvo2hcCJv69JjcC4-cJl5n4gZ5pTa2geKgoV5EuguEAQ3L3YWf0tyHoZT"
+    @connection.headers["Authorization"] = "Bearer ya29.CjHuAmzkQF0uJ-UU5jIuP6dQ5RhfdmOZbtvQnhHIlEucK0NPe_i6MbkbyT7lXu0q8BNs"
   end
-
 
   def google
     GoogleService.new
@@ -21,13 +20,15 @@ class GoogleService
 
   def messages
 
-   JSON.parse(google.connection.get("/gmail/v1/users/kris.foss@gmail.com/messages").body)["messages"] #a nested array of hashes with thredid and id, adding on the key kets you the array of the messages
+   JSON.parse(connection.get("/gmail/v1/users/kris.foss@gmail.com/messages").body)["messages"]
+
+   #a nested array of hashes with thredid and id, adding on the key kets you the array of the messages
 
     # JSON.parse(GoogleService.new.connection.get("https://www.googleapis.com/gmail/v1/users/kris.foss@gmail.com/messages").body)["messages"] #a nested array of hashes with thredid and id, adding on the key kets you the array of the messages
   end
 
   def message(id)
-    JSON.parse(google.connection.get("/gmail/v1/users/kris.foss@gmail.com/messages/#{id}").body)
+    JSON.parse(connection.get("/gmail/v1/users/kris.foss@gmail.com/messages/#{id}").body)
   end
 
   # 154eaacf3d7b6dc4
