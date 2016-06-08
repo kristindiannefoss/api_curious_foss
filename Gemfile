@@ -29,7 +29,7 @@ gem 'google-api-client'
 
 gem 'figaro'
 
-gem "omniauth-google-oauth2"
+gem "omniauth-github"
 
 gem 'omniauth', :github => 'intridea/omniauth'
 # Use ActiveModel has_secure_password
